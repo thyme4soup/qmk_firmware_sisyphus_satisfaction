@@ -160,7 +160,7 @@ bool oled_task_needs_to_repaint(void) {
 
     // If the sleep timer has expired while the OLED was on, turn the OLED off.
     if (timer_expired32(timer_read32(), oled_sleep_timer)) {
-        oled_off();
+        oled_clear(); // clear instead
         return false;
     }
 
